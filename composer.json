@@ -1,0 +1,17 @@
+{
+    "name": "hp/ticket-app-twig",
+    "autoload": {
+        "psr-4": {
+            "Hp\\TicketAppTwig\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Onyinye Oguocha",
+            "email": "stephanieoguocha@gmail.com"
+        }
+    ],
+    "require": {
+        "twig/twig": "3.7"
+    }
+}

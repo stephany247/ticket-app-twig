@@ -1,0 +1,93 @@
+<nav class="bg-white border-b border-blue-300 shadow-sm sticky top-0 z-50">
+  <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+    {# Logo #}
+    <a href="index.php?page=landing" class="text-2xl font-bold text-blue-600">
+      TicketPro
+    </a>
+
+    {# Desktop Links #}
+    <div class="hidden md:flex items-center gap-6">
+      <a href="index.php?page=landing" class="hover:text-blue-600 transition">Home</a>
+      <a href="index.php?page=dashboard" class="hover:text-blue-600 transition">Dashboard</a>
+      <a href="index.php?page=tickets" class="hover:text-blue-600 transition">Tickets</a>
+    </div>
+
+    {# Auth Buttons #}
+    <div class="hidden md:flex items-center gap-4">
+      {% if user %}
+        <form method="POST" action="index.php?page=logout">
+          <button
+            type="submit"
+            class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md text-sm"
+          >
+            Logout
+          </button>
+        </form>
+      {% else %}
+        <a
+          href="index.php?page=login"
+          class="text-blue-600 border border-blue-600 px-3 py-1 rounded-md hover:bg-blue-600 hover:text-white transition"
+        >
+          Login
+        </a>
+        <a
+          href="index.php?page=register"
+          class="bg-blue-600 text-white px-3 py-1 rounded-md hover:bg-blue-700 transition"
+        >
+          Register
+        </a>
+      {% endif %}
+    </div>
+
+    {# Mobile Menu Button #}
+    <button
+      id="menu-toggle"
+      class="md:hidden text-gray-700 text-3xl focus:outline-none"
+    >
+      ☰
+    </button>
+  </div>
+
+  {# Mobile Menu (Hidden by Default, shown via JS toggle) #}
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-blue-300">
+    <div class="flex flex-col p-4 space-y-3 text-center">
+      <a href="index.php?page=landing" class="hover:text-blue-600 transition">Home</a>
+      <a href="index.php?page=dashboard" class="hover:text-blue-600 transition">Dashboard</a>
+      <a href="index.php?page=tickets" class="hover:text-blue-600 transition">Tickets</a>
+
+      {% if user %}
+        <form method="POST" action="index.php?page=logout">
+          <button
+            type="submit"
+            class="inline-flex items-center justify-center px-4 py-2 rounded-lg border border-transparent bg-red-600 text-white font-medium hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+          >
+            Logout
+          </button>
+        </form>
+      {% else %}
+        <a
+          href="index.php?page=login"
+          class="inline-flex items-center justify-center px-4 py-2 rounded-lg border border-transparent bg-blue-600 text-white font-medium hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+        >
+          Login
+        </a>
+        <a
+          href="index.php?page=register"
+          class="inline-flex items-center justify-center px-4 py-2 rounded-lg border border-blue-600 bg-white text-blue-600 font-medium hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+        >
+          Register
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</nav>
+
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  }
+</script>
