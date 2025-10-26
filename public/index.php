@@ -1,13 +1,12 @@
 <?php
-require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 use Twig\Environment;
 use Twig\Loader\FilesystemLoader;
 
-// Initialize Twig
-$loader = new FilesystemLoader(__DIR__ . '/templates');
+$loader = new FilesystemLoader(__DIR__ . '/../templates');
 $twig = new Environment($loader, [
-    'cache' => false, // You can set this to a folder if you want caching later
+    'cache' => false
 ]);
 
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
