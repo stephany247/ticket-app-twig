@@ -12,11 +12,11 @@
 			<div class="space-y-1">
 				<label for="email" class="block font-medium">Email</label>
 				<input type="email" id="email" name="email" placeholder="Email" class="w-full p-3 border rounded-md focus:outline-none focus:ring-2
-										          {% if errors.email %}
-										            border-red-500 focus:ring-red-400
-										          {% else %}
-										            border-gray-300 focus:ring-blue-500
-										          {% endif %}" value="{{ old.email|default('') }}"/>
+																				          {% if errors.email %}
+																				            border-red-500 focus:ring-red-400
+																				          {% else %}
+																				            border-gray-300 focus:ring-blue-500
+																				          {% endif %}" value="{{ old.email|default('') }}"/>
 				{% if errors.email %}
 					<p class="text-red-500 text-sm">{{ errors.email }}</p>
 				{% endif %}
@@ -26,11 +26,11 @@
 			<div class="space-y-1">
 				<label for="password" class="block font-medium">Password</label>
 				<input type="password" id="password" name="password" placeholder="Password" class="w-full p-3 border rounded-md focus:outline-none focus:ring-2
-										          {% if errors.password %}
-										            border-red-500 focus:ring-red-400
-										          {% else %}
-										            border-gray-300 focus:ring-blue-500
-										          {% endif %}"/>
+												{% if errors.password %}
+												 border-red-500 focus:ring-red-400
+												{% else %}
+												 border-gray-300 focus:ring-blue-500
+												{% endif %}"/>
 				{% if errors.password %}
 					<p class="text-red-500 text-sm">{{ errors.password }}</p>
 				{% endif %}
@@ -47,3 +47,8 @@
 		</form>
 	</section>
 {% endblock %}
+
+{% block scripts %}
+  <script src="/public/login.js"></script>
+{% endblock %}
+

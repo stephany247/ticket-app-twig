@@ -9,16 +9,70 @@
 		</title>
 		{# <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet"> #}
 		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+		<style>
+			.toast-container {
+				position: fixed;
+				top: 20px;
+				right: 20px;
+				z-index: 1000;
+				display: flex;
+				flex-direction: column;
+				gap: 10px;
+			}
+
+			.toast {
+				background: #333;
+				color: #fff;
+				padding: 12px 18px;
+				border-radius: 8px;
+				box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+				animation: fadeIn 0.3s ease, fadeOut 0.3s ease 2.7s forwards;
+			}
+
+			.toast.success {
+				background: #16a34a; /* green */
+			}
+
+			.toast.error {
+				background: #dc2626; /* red */
+			}
+
+			.toast.info {
+				background: #2563eb; /* blue */
+			}
+
+			@keyframes fadeIn {
+				from {
+					opacity: 0;
+					transform: translateY(-10px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			@keyframes fadeOut {
+				to {
+					opacity: 0;
+					transform: translateY(-10px);
+				}
+			}
+		</style>
 	</head>
 
 	<body class="bg-gray-50 text-gray-800 min-h-screen flex flex-col">
 		{% include 'partials/navbar.html.twig' %}
 		<main class="grow">
+			<div id="toastContainer" class="toast-container"></div>
+
 			{% block content %}
 				{# main content here #}
 			{% endblock %}
 		</main>
 		{% include 'partials/footer.html.twig' %}
-
+		<script src="/public/app.js"></script>
+		{# Page-specific JS #}
+		{% block scripts %}{% endblock %}
 	</body>
 </html>

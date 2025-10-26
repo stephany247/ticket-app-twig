@@ -12,7 +12,7 @@
 			<div class="space-y-2">
 				<label for="fullName" class="block text-sm font-medium">Full Name</label>
 				<input type="text" id="fullName" name="fullName" placeholder="Full Name" class="w-full p-3 border rounded-md focus:outline-none focus:ring-2
-					                   {% if errors.fullName %}border-red-500 focus:ring-red-400{% else %}border-gray-300 focus:ring-blue-500{% endif %}" value="{{ old.fullName|default('') }}">
+														                   {% if errors.fullName %}border-red-500 focus:ring-red-400{% else %}border-gray-300 focus:ring-blue-500{% endif %}" value="{{ old.fullName|default('') }}">
 				{% if errors.fullName %}
 					<p class="text-red-500 text-sm">{{ errors.fullName }}</p>
 				{% endif %}
@@ -22,7 +22,7 @@
 			<div class="space-y-2">
 				<label for="email" class="block text-sm font-medium">Email</label>
 				<input type="email" id="email" name="email" placeholder="Email" class="w-full p-3 border rounded-md focus:outline-none focus:ring-2
-					                   {% if errors.email %}border-red-500 focus:ring-red-400{% else %}border-gray-300 focus:ring-blue-500{% endif %}" value="{{ old.email|default('') }}">
+														                   {% if errors.email %}border-red-500 focus:ring-red-400{% else %}border-gray-300 focus:ring-blue-500{% endif %}" value="{{ old.email|default('') }}">
 				{% if errors.email %}
 					<p class="text-red-500 text-sm">{{ errors.email }}</p>
 				{% endif %}
@@ -32,7 +32,7 @@
 			<div class="space-y-2">
 				<label for="password" class="block text-sm font-medium">Password</label>
 				<input type="password" id="password" name="password" placeholder="Password" class="w-full p-3 border rounded-md focus:outline-none focus:ring-2
-					                   {% if errors.password %}border-red-500 focus:ring-red-400{% else %}border-gray-300 focus:ring-blue-500{% endif %}">
+														                   {% if errors.password %}border-red-500 focus:ring-red-400{% else %}border-gray-300 focus:ring-blue-500{% endif %}">
 				{% if errors.password %}
 					<p class="text-red-500 text-sm">{{ errors.password }}</p>
 				{% endif %}
@@ -42,7 +42,7 @@
 			<div class="space-y-2">
 				<label for="confirmPassword" class="block text-sm font-medium">Confirm Password</label>
 				<input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" class="w-full p-3 border rounded-md focus:outline-none focus:ring-2
-					                   {% if errors.confirmPassword %}border-red-500 focus:ring-red-400{% else %}border-gray-300 focus:ring-blue-500{% endif %}">
+														                   {% if errors.confirmPassword %}border-red-500 focus:ring-red-400{% else %}border-gray-300 focus:ring-blue-500{% endif %}">
 				{% if errors.confirmPassword %}
 					<p class="text-red-500 text-sm">{{ errors.confirmPassword }}</p>
 				{% endif %}
@@ -58,4 +58,9 @@
 			</p>
 		</form>
 	</section>
+{% endblock %}
+
+
+{% block scripts %}
+	<script src="/public/register.js"></script>
 {% endblock %}

@@ -1,0 +1,75 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+	<main class="min-h-screen bg-gray-50 p-6">
+		<div
+			class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+
+			<!-- LEFT — Create/Edit Ticket Form -->
+			<section class="bg-white rounded-2xl shadow-sm p-6 border border-blue-300">
+				<h2 id="form-title" class="text-xl font-semibold mb-4">
+					Create New Ticket
+				</h2>
+
+				<form
+					id="ticket-form" class="space-y-3">
+					<!-- Title -->
+					<div class="flex flex-col">
+						<label for="title" class="text-sm font-medium text-gray-700">
+							Title
+						</label>
+						<input id="title" type="text" placeholder="Enter ticket title" class="mt-1 px-3 py-2 border border-blue-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+					</div>
+
+					<!-- Description -->
+					<div class="flex flex-col">
+						<label for="description" class="text-sm font-medium text-gray-700">
+							Description
+						</label>
+						<textarea id="description" rows="4" placeholder="Describe the issue..." class="mt-1 px-3 py-2 border border-blue-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"></textarea>
+					</div>
+
+					<!-- Priority -->
+					<div class="flex flex-col">
+						<label for="priority" class="text-sm font-medium text-gray-700">
+							Priority
+						</label>
+						<select id="priority" class="mt-1 px-3 py-2 border border-blue-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+							<option value="">Select priority</option>
+							<option value="Low">Low</option>
+							<option value="Medium">Medium</option>
+							<option value="High">High</option>
+						</select>
+					</div>
+
+					<!-- Status -->
+					<div class="flex flex-col">
+						<label for="status" class="text-sm font-medium text-gray-700">
+							Status
+						</label>
+						<select id="status" class="mt-1 px-3 py-2 border border-blue-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+							<option value="">Select status</option>
+							<option value="Open">Open</option>
+							<option value="In Progress">In Progress</option>
+							<option value="Closed">Closed</option>
+						</select>
+					</div>
+
+					<!-- Submit -->
+					<button type="submit" class="w-full bg-blue-600 text-white py-2 mt-4 rounded-lg hover:bg-blue-700 transition-all">
+						Create Ticket
+					</button>
+				</form>
+			</section>
+
+			<!-- RIGHT — Ticket List -->
+			<section>
+				<h2 class="text-xl font-semibold mb-4">Tickets</h2>
+				<div id="ticket-list" class="space-y-3">
+					<p class="text-gray-500 text-sm">No tickets yet.</p>
+				</div>
+			</section>
+
+		</div>
+	</main>
+{% endblock %}
