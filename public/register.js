@@ -1,3 +1,5 @@
+import { createSession } from "./session.js";
+
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("form");
 
@@ -91,6 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     users.push(newUser);
+    createSession(newUser)
     localStorage.setItem("ticketapp_users", JSON.stringify(users));
 
     showToast("Registration successful! Redirecting...", "success");

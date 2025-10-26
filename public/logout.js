@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
       showToast("You have been logged out.", "info");
 
       // Redirect after short delay
-      setTimeout(() => (window.location.href = "/auth/login"), 1000);
+      setTimeout(() => (window.location.href = "/"), 1000);
     });
   });
 });

@@ -69,9 +69,9 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     if (!existingUser) {
-      showToast("Invalid email or password", "error");
-      showError("email", "Invalid email address");
-      showError("password", "Incorrect password");
+      showToast("We couldn't find an account with that email.", "error");
+      showError("email", "Please check your email address");
+      showError("password", "Please check your password");
       return;
     }
 
