@@ -4,6 +4,12 @@ FROM php:8.0-apache
 # Enable URL rewriting for routing
 RUN a2enmod rewrite
 
+# Allow .htaccess overrides
+RUN echo '<Directory /var/www/html/public>\n\
+    AllowOverride All\n\
+</Directory>' > /etc/apache2/conf-available/allow-htaccess.conf \
+    && a2enconf allow-htaccess
+
 # Install Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
@@ -17,7 +23,6 @@ COPY . .
 RUN composer install --no-interaction --prefer-dist --optimize-autoloader
 
 # Set proper Apache DocumentRoot to /var/www/html/public
-# (Render expects your app to serve from the /public directory)
 RUN sed -i 's#/var/www/html#/var/www/html/public#g' /etc/apache2/sites-available/000-default.conf
 
 # Expose HTTP port
