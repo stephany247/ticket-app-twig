@@ -14,7 +14,7 @@ $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 //  routing
 switch ($path) {
     case '/':
-        echo $twig->render('landing.html.twig');
+        echo $twig->render('index.html.twig');
         break;
 
     case '/auth/login':
@@ -34,6 +34,6 @@ switch ($path) {
         break;
 
     default:
-        echo $twig->render('landing.html.twig');
+        echo $twig->render('index.html.twig');
         break;
 }

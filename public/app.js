@@ -1,4 +1,3 @@
-// function showToast(message, type = 'info') {
 window.showToast = function (message, type = "info") {
   const container = document.getElementById("toastContainer");
   if (!container) return;
