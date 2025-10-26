@@ -1,7 +1,6 @@
 import { isAuthenticated } from "./session.js";
 
-document.addEventListener("DOMContentLoaded", () => {
-  // List of protected routes
+// List of protected routes
   const protectedPaths = ["/dashboard", "/tickets"];
   const authPaths = ["/auth/login", "/auth/register"];
 
@@ -19,4 +18,3 @@ document.addEventListener("DOMContentLoaded", () => {
   if (userIsLoggedIn && authPaths.includes(currentPath)) {
     window.location.href = "/dashboard";
   }
-});
