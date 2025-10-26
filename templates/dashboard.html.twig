@@ -11,7 +11,7 @@
 				<span id="user-name" class="text-blue-600"></span>!
 			</h1>
 			<p class="text-gray-600 text-center mb-8">
-				Here’s an overview of your ticket activity 🚀
+				Here&apos;s an overview of your tickets!🚀
 			</p>
 
 			<!-- Ticket Stats -->
@@ -35,14 +35,17 @@
 			</div>
 
 			<!-- Actions -->
-			<div class="flex flex-col sm:flex-row gap-3 justify-center">
-				<button id="manage-tickets-btn" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition">
+			<div class="flex flex-col sm:flex-row gap-3 justify-center text-center">
+				<a href="/tickets" class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition duration-300 ease-in-out">
 					Manage Tickets
-				</button>
-				<button id="logout-btn" class="w-full sm:w-auto bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-md transition">
+				</a>
+				<button id="logout-btn" class="logout-btn w-full sm:w-auto bg-red-500 hover:bg-red-600 text-white font-medium py-2 px-4 rounded-md transition duration-300 ease-in-out cursor-pointer">
 					Logout
 				</button>
 			</div>
 		</div>
 	</div>
+{% endblock %}
+{% block scripts %}
+  <script type="module" src="/public/authGuard.js"></script>
 {% endblock %}

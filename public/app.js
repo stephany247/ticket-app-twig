@@ -1,8 +1,9 @@
-function showToast(message, type = 'info') {
-  const container = document.getElementById('toastContainer');
+// function showToast(message, type = 'info') {
+window.showToast = function (message, type = "info") {
+  const container = document.getElementById("toastContainer");
   if (!container) return;
 
-  const toast = document.createElement('div');
+  const toast = document.createElement("div");
   toast.className = `toast ${type}`;
   toast.textContent = message;
 
@@ -12,4 +13,4 @@ function showToast(message, type = 'info') {
   setTimeout(() => {
     toast.remove();
   }, 3000);
-}
+};

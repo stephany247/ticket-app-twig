@@ -1,3 +1,5 @@
+import { createSession } from "./session.js";
+
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("form");
 
@@ -62,20 +64,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Get users from localStorage
     const users = JSON.parse(localStorage.getItem("ticketapp_users")) || [];
-    const user = users.find(
+    const existingUser = users.find(
       (u) => u.email === email && u.password === password
     );
 
-    if (!user) {
+    if (!existingUser) {
       showToast("Invalid email or password", "error");
-      showError("email", "Invalid credentials");
-      showError("password", "Invalid credentials");
+      showError("email", "Invalid email address");
+      showError("password", "Incorrect password");
       return;
     }
 
     // Successful login
-    // localStorage.setItem("tickser", JSON.stringify(user));
-    showToast(`Welcome back, ${user.fullName}!`, "success");
+    createSession(existingUser);
+    showToast(`Welcome back, ${existingUser.fullName}!`, "success");
 
     setTimeout(() => {
       window.location.href = "/dashboard";
