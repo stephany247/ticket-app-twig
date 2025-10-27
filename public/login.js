@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Validate fields
     if (!email) {
-      showError("email", "Email is required");
+      showError("email", "Email is required.");
       valid = false;
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       showError("email", "Enter a valid email address");
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (!password) {
-      showError("password", "Password is required");
+      showError("password", "Password is required.");
       valid = false;
     }
 
@@ -69,9 +69,9 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     if (!existingUser) {
-      showToast("We couldn't find an account with that email.", "error");
-      showError("email", "Please check your email address");
-      showError("password", "Please check your password");
+      showToast("Invalid credentials. Please try again.", "error");
+      showError("email", "Please check your email address.");
+      showError("password", "Please check your password.");
       return;
     }
 

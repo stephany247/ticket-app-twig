@@ -128,11 +128,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let valid = true;
     if (!titleInput.value.trim()) {
-      showError(titleInput, "Title is required");
+      showError(titleInput, "Title is required.");
       valid = false;
     }
     if (!statusInput.value) {
-      showError(statusInput, "Select a status");
+      showError(statusInput, "Select a status.");
       valid = false;
     }
     if (!valid) return;
@@ -144,14 +144,14 @@ document.addEventListener("DOMContentLoaded", () => {
           ? {
               ...t,
               title: titleInput.value,
-              description: descInput.value.trim() || "No description provided",
+              description: descInput.value.trim() || "No description provided.",
             //   ...(priorityInput.value ? { priority: priorityInput.value } : {}),
               priority: priorityInput.value,
               status: statusInput.value,
             }
           : t
       );
-      showToast("Ticket updated successfully", "success");
+      showToast("Ticket updated successfully!", "success");
       editTicketId = null;
       formTitle.textContent = "Create New Ticket";
       ticketForm.querySelector("button[type=submit]").textContent =
@@ -166,7 +166,7 @@ document.addEventListener("DOMContentLoaded", () => {
         status: statusInput.value,
       };
       tickets.push(newTicket);
-      showToast("Ticket created successfully", "success");
+      showToast("Ticket created successfully!", "success");
     }
 
     saveTickets();
