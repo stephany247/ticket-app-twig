@@ -4,12 +4,14 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>
-			{% block title %}My Ticket App
+			{% block title %}Ticket App
 			{% endblock %}
 		</title>
-		{# <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.1/dist/tailwind.min.css" rel="stylesheet"> #}
+		<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
 		<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-		   <script type="module" src="/authGuard.js"></script>
+		<script src="https://code.iconify.design/iconify-icon/2.1.0/iconify-icon.min.js"></script>
+
+		<script type="module" src="/authGuard.js"></script>
 		<style>
 			.toast-container {
 				position: fixed;
@@ -73,7 +75,7 @@
 		</main>
 		{% include 'partials/footer.html.twig' %}
 		<script src="/app.js"></script>
-		 <script type="module" src="/logout.js"></script>
+		<script type="module" src="/logout.js"></script>
 		{# Page-specific JS #}
 		{% block scripts %}{% endblock %}
 	</body>
