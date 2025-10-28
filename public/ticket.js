@@ -86,10 +86,10 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="flex gap-2 self-end">
             <button data-id="${
               t.id
-            }" class="edit-btn text-blue-600 hover:underline text-sm">Edit</button>
+            }" class="edit-btn text-blue-600 hover:underline text-smn cursor-pointer">Edit</button>
             <button data-id="${
               t.id
-            }" class="delete-btn text-red-600 hover:underline text-sm">Delete</button>
+            }" class="delete-btn text-red-600 hover:underline text-smn cursor-pointer">Delete</button>
           </div>
         </div>
       </div>
